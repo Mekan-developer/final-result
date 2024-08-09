@@ -4,9 +4,9 @@
         <div class="flex justify-end pr-2">
             <p class=" font-semibold text-[22px]">Sign in</p>
         </div>
-        <div class="flex-col w-72 text-[18px]">
+        <div class="flex-col w-72 text-[16px]">
             <div class="mb-2 form-group">
-                <label for="name">name</label><br>
+                <label for="name">Name</label><br>
                 <input v-model="name" class="form-control-sm form-control text-[16px]" type="name" id="email" placeholder="name">
             </div>
             <div class="mb-2 form-group">
@@ -30,11 +30,11 @@
                 <button @click.prevent="register" class="w-full h-8 leading-[16px] btn btn-primary rounded-sm">Sign in</button>
             </div>
         </div>
-        <div class="flex justify-end">
-            <p>
-                <span class="text-black">Forgot </span>
-                <a class="text-[var(--mainGreen)]" href="#">password?</a>
-            </p>
+        <div class="flex justify-end gap-2">
+                <p class="text-black">If you registered!</p>
+                <span class="text-[var(--mainGreen)]">
+                    <router-link :to="{name:'user.login'}">Log in</router-link>
+                </span>
         </div>
     </div>
 </div>

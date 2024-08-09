@@ -111,7 +111,7 @@ export default {
         language: String,
         languages: Object,
     },
-    emit: ["popupDeleteCreate"],
+    emit: ["popupDeleteCreate","getFoods"],
     data() {
         const name = {};
         return {
@@ -172,9 +172,8 @@ export default {
         },
         storeFoods() {
             this.validations();
-            if (this.isLoading) {
+            if (this.isLoading) 
                 return;
-            }
             this.isLoading = true;
             if (Object.keys(this.errors).length === 1 && Object.keys(this.errors.name).length === 0) {
                 let formData = new FormData();
@@ -189,6 +188,7 @@ export default {
                 if (this.sizeData.length == 0) formData.append("price", this.price);
                 api.post("/api/foods", formData).then((res) => {
                     this.$emit('popupDeleteCreate');
+                    this.$emit('getFoods');
                 });
             }
         },

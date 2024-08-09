@@ -35,7 +35,7 @@
             </tbody>
         </table>
     </div>
-    <create-component v-if="isActiveCreate" @popup-delete-create="myAction" :language="language" :languages="languages"></create-component>
+    <create-component v-if="isActiveCreate" @getFoods="getFoods" @popup-delete-create="myAction" :language="language" :languages="languages"></create-component>
     <edit-component @popup-delete-edit="isVisibilityEdit" :isActiveEdit="isActiveEdit"></edit-component>
 </template>
 

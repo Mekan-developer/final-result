@@ -14,20 +14,27 @@
                 <input v-model="password" class="form-control form-control-sm text-[16px]" type="password" name="" id="password" placeholder="password">
             </div>
             <div v-if="error" class="text-red-600 text-[16px]">{{ error }}</div>
-            <div class="flex gap-1">
-                <input v-model="remember" type="checkbox" id="checkbox" >
-                <label for="checkbox" class="cursor-pointer"> Remember me</label>
-                
+            <div class="flex justify-between text-[16px]">
+                <div class="flex gap-1">
+                    <input v-model="remember" type="checkbox" id="checkbox" >
+                    <label for="checkbox" class="cursor-pointer"> Remember me</label>
+                </div> 
+                <div class="flex">
+                    <p>
+                        <span class="text-black">Forgot </span>
+                        <a class="text-[var(--mainGreen)]" href="#">password?</a>
+                    </p>
+                </div>
             </div>
             <div class="">
                 <button @click.prevent="login" class="w-full h-8 leading-[16px] btn btn-primary rounded-sm">Sign in</button>
             </div>
         </div>
-        <div class="flex justify-end">
-            <p>
-                <span class="text-black">Forgot </span>
-                <a class="text-[var(--mainGreen)]" href="#">password?</a>
-            </p>
+        <div class="flex gap-2">
+                <p >if you not registered yet!</p>
+                <span class="text-[#2da5dd]">
+                    <router-link :to="{name:'user.register'}">register</router-link>
+                </span>
         </div>
     </div>
 </div>
